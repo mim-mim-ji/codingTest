@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="CodingTest">
+    <output-path>$PROJECT_DIR$/out/artifacts/CodingTest</output-path>
+    <root id="root">
+      <element id="archive" name="CodingTest.jar">
+        <element id="module-output" name="CodingTest" />
+      </element>
+    </root>
+  </artifact>
+</component>
