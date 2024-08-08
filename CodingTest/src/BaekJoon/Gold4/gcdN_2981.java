@@ -20,25 +20,29 @@ public class gcdN_2981 {
         //M으로 나눴을때 나머지가 모두 같게되는 M을 찾기
         int M1 = solution(N, arr);
 
-        for(int i=2;i<= M1;i++){
-            if(M1 % i ==0) System.out.println(i);
+        //최대공약수와 그의 약수들을 구하면 됨!!
+        for (int i = 2; i <= M1; i++) {
+            if (M1 % i == 0) System.out.println(i);
         }
     }
 
-    public static int solution(int N, int[] arr){
+    //(A-B), (B-C), (C-D) 의 최대공약수를 구하기
+    public static int solution(int N, int[] arr) {
         Arrays.sort(arr);
         int gcd = arr[1] - arr[0];
-        for(int i=2;i<N;i++){
-            gcd = getGcd(gcd,arr[i]-arr[i-1]);
+
+        for (int i = 2; i < N; i++) {
+            // 직전의 최대 공약수와 다음 수(arr[i] - arr[i - 1])의 최대공약수를 갱신
+            gcd = getGcd(gcd, arr[i] - arr[i - 1]);
         }
         return gcd;
     }
 
-    public static int getGcd(int A, int B){
-        if(A % B == 0){
+    public static int getGcd(int A, int B) {
+        if (A % B == 0) {
             return B;
-        }else{
-            return getGcd(B, A%B);
+        } else {
+            return getGcd(B, A % B);
         }
     }
 }
